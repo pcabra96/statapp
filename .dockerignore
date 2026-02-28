@@ -1,0 +1,36 @@
+# .dockerignore — files excluded from the Docker build context
+#
+# Why does this matter?
+#   The Docker build context is everything in the project folder that gets
+#   sent to the Docker daemon. Large or irrelevant files slow down the build
+#   and can inflate the image size. Exclude anything that isn't needed to
+#   run the app.
+
+# Python cache files — regenerated at runtime, never needed in the image
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Virtual environments — the image has its own isolated Python environment
+.venv/
+venv/
+env/
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Git history — not needed to run the app
+.git/
+.gitignore
+
+# Local development data — uploaded files should come through the browser UI
+*.csv
+*.xlsx
+*.xls
+
+# Documentation and project notes — not needed at runtime
+*.md

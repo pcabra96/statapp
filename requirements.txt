@@ -1,0 +1,15 @@
+# StatApp dependencies
+# Pin minor versions for reproducibility; allow patch updates (e.g. 1.5.x)
+#
+# Why pin at all?
+#   Without pinning, `pip install` always grabs the latest version.
+#   A future breaking release could silently break your deployed app.
+#   Pinning here + the Docker layer cache means every build is identical.
+
+streamlit==1.43.0
+pandas==2.2.3
+statsmodels==0.14.4
+matplotlib==3.10.1
+seaborn==0.13.2
+scipy==1.15.2
+openpyxl==3.1.5
