@@ -2,8 +2,14 @@
 # run_statapp.command
 # Double-click this file to launch StatApp in your browser.
 
-# Navigate to the project folder
-cd /Users/pablocabramontes/Desktop/Apps/statapp
+PROJECT=/Users/pablocabramontes/Apps/statapp
 
-# Use conda's streamlit directly — no venv activation needed
-/Applications/anaconda3/bin/streamlit run app.py
+# cd to home first — guaranteed to be accessible in any launch context.
+# Streamlit calls os.getcwd() on startup; if that directory is restricted
+# (which happens when macOS opens a .command file from the Desktop),
+# it raises a PermissionError before our app even loads.
+cd "$HOME"
+
+# PYTHONPATH lets Python find sections/ and utils/ even though we're not
+# running from inside the project folder.
+PYTHONPATH="$PROJECT" /Applications/anaconda3/bin/streamlit run "$PROJECT/app.py"
