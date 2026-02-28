@@ -46,7 +46,4 @@ HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health || exit 1
 # --server.fileWatcherType=none  disables the file watcher that reruns the app
 #                            on code changes. Unnecessary in production and
 #                            saves a small amount of CPU.
-CMD ["streamlit", "run", "app.py",
-     "--server.address=0.0.0.0",
-     "--server.port=8501",
-     "--server.fileWatcherType=none"]
+CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501", "--server.fileWatcherType=none"]
