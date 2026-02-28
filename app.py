@@ -22,7 +22,7 @@ import warnings
 import streamlit as st
 
 import sections.upload as upload
-import sections.univariate as univariateßß
+import sections.univariate as univariate
 import sections.bivariate as bivariate
 import sections.regression as regression
 
